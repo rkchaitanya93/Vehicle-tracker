@@ -9,5 +9,8 @@ import io.krishna.entity.Vehicle;
 public interface VehicleService {
 
     Vehicle update(String vin, Vehicle vehicle);
+
     Readings addReading(Readings reading);
+
+    void checkAlerts(Readings reading);
 }

@@ -35,7 +35,7 @@ public class JPAConfig {
     public DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/emp_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
+        ds.setUrl("jdbc:mysql://localhost:3306/vehicletracker?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
         ds.setUsername("root");
         ds.setPassword("root");
         return ds;
@@ -51,7 +51,7 @@ public class JPAConfig {
         Properties props = new Properties();
         props.put("hibernate.dialect", "org.hibernate.dialect.MySQL57Dialect");
         props.put("hibernate.show_sql", "true");
-        props.put("hibernate.hbm2ddl.auto", "validate");
+        props.put("hibernate.hbm2ddl.auto", "create");
         return props;
     }
 

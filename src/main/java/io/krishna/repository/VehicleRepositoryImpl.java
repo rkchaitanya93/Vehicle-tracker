@@ -1,6 +1,6 @@
 package io.krishna.repository;
 
-import com.sun.org.apache.regexp.internal.RE;
+import io.krishna.entity.Alerts;
 import io.krishna.entity.Readings;
 import io.krishna.entity.Vehicle;
 import org.springframework.stereotype.Repository;
@@ -36,6 +36,12 @@ public class VehicleRepositoryImpl implements VehicleRepository{
     public Readings addReading(Readings reading){
         em.persist(reading);
         return(reading);
+    }
+
+    @Override
+    public Alerts addAlert(Alerts alert){
+        em.persist(alert);
+        return alert;
     }
 
 }

@@ -3,6 +3,7 @@ package io.krishna.entity;
 /**
  * Created by Krishna on 5/30/2017.
  */
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -19,12 +20,12 @@ public class Vehicle {
     private int year;
     private int redlineRpm;
     private double maxFuelVolume;
-    private Date lastServiceDate;
+    private ZonedDateTime lastServiceDate;
 
-    public Date getLastServiceDate() {
+    public ZonedDateTime getLastServiceDate() {
         return lastServiceDate;
     }
-    public void setLastServiceDate(Date lastServiceDate) {
+    public void setLastServiceDate(ZonedDateTime lastServiceDate) {
         this.lastServiceDate = lastServiceDate;
     }
     public int getYear() {
