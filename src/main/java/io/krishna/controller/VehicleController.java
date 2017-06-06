@@ -1,5 +1,6 @@
 package io.krishna.controller;
 
+import io.krishna.entity.Readings;
 import io.krishna.entity.Vehicle;
 import io.krishna.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,11 @@ public class VehicleController {
         return vehicle;
     }
 
+    @RequestMapping(method = RequestMethod.POST, value="readings",
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Readings update(@RequestBody Readings reading){
+        service.addReading(reading);
+        return reading;
+    }
 
 }

@@ -1,5 +1,7 @@
 package io.krishna.repository;
 
+import com.sun.org.apache.regexp.internal.RE;
+import io.krishna.entity.Readings;
 import io.krishna.entity.Vehicle;
 import org.springframework.stereotype.Repository;
 
@@ -29,6 +31,11 @@ public class VehicleRepositoryImpl implements VehicleRepository{
     @Override
     public Vehicle update(Vehicle vehicle){
         return em.merge(vehicle);
+    }
+    @Override
+    public Readings addReading(Readings reading){
+        em.persist(reading);
+        return(reading);
     }
 
 }

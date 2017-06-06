@@ -1,5 +1,6 @@
 package io.krishna.service;
 
+import io.krishna.entity.Readings;
 import io.krishna.entity.Vehicle;
 import io.krishna.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,12 @@ public class VehicleServiceImpl implements VehicleService {
             repo.update(vehicle);
         }
         return vehicle;
+    }
+    @Override
+    @Transactional
+    public Readings addReading(Readings reading){
+        repo.addReading(reading);
+        return reading;
     }
 }
 

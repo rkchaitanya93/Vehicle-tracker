@@ -1,5 +1,6 @@
 package io.krishna.service;
 
+import io.krishna.entity.Readings;
 import io.krishna.entity.Vehicle;
 
 /**
@@ -8,4 +9,5 @@ import io.krishna.entity.Vehicle;
 public interface VehicleService {
 
     Vehicle update(String vin, Vehicle vehicle);
+    Readings addReading(Readings reading);
 }
