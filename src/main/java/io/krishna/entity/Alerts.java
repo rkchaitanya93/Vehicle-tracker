@@ -3,11 +3,10 @@ package io.krishna.entity;
 import javax.persistence.*;
 
 import java.time.ZonedDateTime;
+import java.util.Date;
 import java.util.UUID;
 
-/**
- * Created by Krishna on 6/6/2017.
- */
+
 @Entity
 public class Alerts {
 
@@ -19,7 +18,7 @@ public class Alerts {
         this.id = UUID.randomUUID().toString();
     }
     private String alertVin;
-    private ZonedDateTime alertTimeStamp;
+    private Date alertTimeStamp;
     private String alertMessage;
     private String priority;
 
@@ -36,10 +35,10 @@ public class Alerts {
         this.alertVin = alertVin;
     }
 
-    public ZonedDateTime getAlertTimeStamp() {
+    public Date getAlertTimeStamp() {
         return alertTimeStamp;
     }
-    public void setAlertTimeStamp(ZonedDateTime alertTimeStamp) {
+    public void setAlertTimeStamp(Date alertTimeStamp) {
         this.alertTimeStamp = alertTimeStamp;
     }
     public String getAlertMessage() {

@@ -3,6 +3,8 @@ package io.krishna.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
+import java.util.Date;
+import java.util.UUID;
 
 /**
  * Created by Krishna on 5/30/2017.
@@ -11,14 +13,17 @@ import java.time.ZonedDateTime;
 public class Readings {
 
     @Id
-    private int id;
-
+    @Column(columnDefinition = "varchar(36)")
+    private String id;
+    public Readings() {
+        this.id = UUID.randomUUID().toString();
+    }
     private String vin;
     @Column(columnDefinition = "Decimal(10,6)")
     private BigDecimal latitude;
     @Column(columnDefinition = "Decimal(10,6)")
     private BigDecimal longitude;
-    private ZonedDateTime timestamp;
+    private Date timestamp;
     private double fuelVolume;
     private int speed;
     private int engineHp;
@@ -31,10 +36,10 @@ public class Readings {
     @MapsId
     private Tires tires;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -59,10 +64,10 @@ public class Readings {
     }
 
 
-    public ZonedDateTime getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
-    public void setTimestamp(ZonedDateTime timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
     public double getFuelVolume() {

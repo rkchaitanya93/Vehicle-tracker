@@ -25,6 +25,7 @@ public class VehicleController {
     @RequestMapping(method = RequestMethod.PUT, value="vehicles",
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<Vehicle> update(@RequestBody List<Vehicle> vehicle){
+        System.out.println("start");
         for(int i=0; i<vehicle.size();i++){
             Vehicle newVehicle = vehicle.get(i);
             String vin = newVehicle.getVin();

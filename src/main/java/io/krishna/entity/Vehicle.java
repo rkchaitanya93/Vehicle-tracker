@@ -20,12 +20,12 @@ public class Vehicle {
     private int year;
     private int redlineRpm;
     private double maxFuelVolume;
-    private ZonedDateTime lastServiceDate;
+    private Date lastServiceDate;
 
-    public ZonedDateTime getLastServiceDate() {
+    public Date getLastServiceDate() {
         return lastServiceDate;
     }
-    public void setLastServiceDate(ZonedDateTime lastServiceDate) {
+    public void setLastServiceDate(Date lastServiceDate) {
         this.lastServiceDate = lastServiceDate;
     }
     public int getYear() {
